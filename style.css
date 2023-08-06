@@ -38,7 +38,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%; /*preenche 100% da página de qualquer dispositivo*/
+  max-width: 588px; /*maximo de largura ideal para abrir em dispositivos*/
   margin: 56px auto 0px;
   padding: 0 24px;
 }
