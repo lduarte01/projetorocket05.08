@@ -78,11 +78,16 @@ body * {
   left: 0; /*posição inicial do button*/
   z-index: 1; /*prioriza qual camada ira sobrepor*/
   transform: translateY(-50%); /*deixa metade do botão pra cima do switch*/
+
+  animation: slide-back 0.3s;
 }
 
 .light #switch button {
-  right: 0; /*quando ativar light mode o button ativa para a direita*/
-  left: initial; /*inicia o button como padrão pela esquerda*/
+  animation: slide-in 0.4s forwards; /*animação do botão deslizar do light para o dark mode, executando função slide in solicitada lá embaixo*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -161,5 +166,23 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
